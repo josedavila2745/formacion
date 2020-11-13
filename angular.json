@@ -121,8 +121,16 @@
               "devServerTarget": "formacion:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
-  "defaultProject": "formacion"
+    }
+  },
+  "defaultProject": "formacion",
+  "cli": {
+    "analytics": false
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "mlmangelbrena": {
+      "hosting": {
+        "formacion": [
+          "mlmangelbrena"
+        ]
+      }
+    }
+  }
+}
