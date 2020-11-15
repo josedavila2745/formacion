@@ -1,13 +1,4 @@
 {
-  "targets": {
-    "mlmangelbrena": {
-      "hosting": {
-        "formacion": [
-          "mlmangelbrena"
-        ]
-      }
-    }
-  },
   "projects": {
     "default": "mlmangelbrena"
   }

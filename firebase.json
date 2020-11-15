@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "formacion",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -12,18 +12,5 @@
         "destination": "/index.html"
       }
     ]
-  },
-  "database": {
-    "rules": "database.rules.json"
-  },
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "storage": {
-    "rules": "storage.rules"
-  },
-  "remoteconfig": {
-    "template": "remoteconfig.template.json"
   }
 }
