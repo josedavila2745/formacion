@@ -15,7 +15,8 @@ export class ProductosComponent implements OnInit {
   ngOnInit(): void {
   }
   muser():string {
-    return localStorage.getItem("email");
+     let vuser=localStorage.getItem("email");
+    return vuser.substring(0,vuser.indexOf('@'));
   }
   logout(): void {
     this.afAuth.signOut().then(() => {localStorage.setItem("email", "");this.router.navigate(['/nologgeado']);})

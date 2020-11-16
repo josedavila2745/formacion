@@ -1,34 +1,112 @@
-<h4 class="text-success ml-1">{{ muser() }}</h4>
+<div class="d-flex justify-content-between ">
+    <h4 class="text-success ml-1">{{ muser() }}</h4>
+    <span class="text-success mt-1 mr-2" (click)="logout()"> Salir </span></div>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active text-danger" aria-current="page">Contenidos</li>
+        <li class="breadcrumb-item active text-danger" aria-current="page"><b>Contenidos</b></li>
     </ol>
 </nav>
 <div class="container">
 
     <div class="row">
-        <h5 class="text-primary ml-2">Contenidos</h5>
         <div class="col-12">
-            <div class="tab-content border p-2 text-danger" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-empresa" role="tabpanel" aria-labelledby="list-empresa-list"> &nbsp;Qué sabes de la Empresa ...</div>
-                <div class="tab-pane fade" id="list-productos" role="tabpanel" aria-labelledby="list-productos-list">&nbsp;Cuánto sabes de los Productos ...</div>
-                <div class="tab-pane fade" id="list-beneficios" role="tabpanel" aria-labelledby="list-beneficios-list">&nbsp;Qué sabes de los Beneficios ...</div>
-                <div class="tab-pane fade" id="list-capacitaciones" role="tabpanel" aria-labelledby="list-capacitaciones-list">&nbsp;Qué sabes de las Capacitaciones ...</div>
-            </div>
+            <img src="{{ empimg }}" class="card-img-top" alt="...">
         </div>
         <div class="col-12 mt-2">
-            <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="list-empresa-list" data-toggle="list" href="#list-empresa" role="tab" aria-controls="empresa" (click)="irA('empresa')">La Empresa</a>
-                <a class="list-group-item list-group-item-action" id="list-productos-list" data-toggle="list" href="#list-productos" role="tab" aria-controls="productos" (click)="irA('productos')">Productos</a>
-                <a class="list-group-item list-group-item-action" id="list-beneficios-list" data-toggle="list" href="#list-beneficios" role="tab" aria-controls="list" (click)="irA('beneficios')">Beneficios</a>
-                <a class="list-group-item list-group-item-action" id="list-capacitaciones-list" data-toggle="list" href="#list-capacitaciones" role="tab" aria-controls="capacitaciones" (click)="irA('capacitaciones')">Capacitaciones</a>
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Empresa
+                </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <div class="list-group" id="list-tab" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" id="list-11-list" data-toggle="list" role="tab" aria-controls="11" (click)="irA('11')">La Empresa</a>
+                                    <a class="list-group-item list-group-item-action" id="list-12-list" data-toggle="list" role="tab" aria-controls="12" (click)="irA('12')">Angel Breña</a>
+                                    <a class="list-group-item list-group-item-action" id="list-13-list" data-toggle="list" role="tab" aria-controls="13" (click)="irA('13')">Modelo de negocios</a>
+                                    <a class="list-group-item list-group-item-action" id="list-14-list" data-toggle="list" role="tab" aria-controls="14" (click)="irA('14')">Misceláneos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Productos
+                </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <div class="list-group" id="list-tab2" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" id="21" data-toggle="list" role="tab" aria-controls="21" (click)="irA('21')">La Empresa</a>
+                                    <a class="list-group-item list-group-item-action" id="22" data-toggle="list" role="tab" aria-controls="22" (click)="irA('22')">Angel Breña</a>
+                                    <a class="list-group-item list-group-item-action" id="23" data-toggle="list" role="tab" aria-controls="23" (click)="irA('23')">Modelo de negocios</a>
+                                    <a class="list-group-item list-group-item-action" id="24" data-toggle="list" role="tab" aria-controls="24" (click)="irA('24')">Misceláneos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Beneficios
+                </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <div class="list-group" id="list-tab3" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" id="list-empresa-list" data-toggle="list" role="tab" aria-controls="empresa" (click)="irA('31')">Beneficios</a>
+                                    <a class="list-group-item list-group-item-action" id="list-angel-list" data-toggle="list" role="tab" aria-controls="productos" (click)="irA('32')">Detalles</a>
+                                    <a class="list-group-item list-group-item-action" id="list-modelo-list" data-toggle="list" role="tab" aria-controls="list" (click)="irA('33')">Cómo conseguirlos</a>
+                                    <a class="list-group-item list-group-item-action" id="list-miscelaneos-list" data-toggle="list" role="tab" aria-controls="capacitaciones" (click)="irA('34')">Observaciones</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFoure">
+                  Capaciones
+                </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <div class="list-group" id="list-tab4" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" id="list-41-list" data-toggle="list" role="tab" aria-controls="41" (click)="irA('41')">Qué son ... </a>
+                                    <a class="list-group-item list-group-item-action" id="list-42-list" data-toggle="list" role="tab" aria-controls="42" (click)="irA('42')">Capacitaciones</a>
+                                    <a class="list-group-item list-group-item-action" id="list-43-list" data-toggle="list" role="tab" aria-controls="43" (click)="irA('43')">Detalles</a>
+                                    <a class="list-group-item list-group-item-action" id="list-44-list" data-toggle="list" role="tab" aria-controls="44" (click)="irA('44')">Observaciones</a>
+                                </div>
+                                <h2 style="color:transparent">@@@@@@@@@</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
-        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Ir</span></a>
-        <a class="navbar-brand"></a>
-        <a class="navbar-brand"><span class="text-success display-6" (click)="logout()"> Cerrar Sesión</span></a>
+        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Ver</span></a>
+        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Video</span></a>
+        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">PDF</span></a>
+        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Test</span></a>
     </nav>
 </div>

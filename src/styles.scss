@@ -9,3 +9,10 @@
 .titulo {
     color: blue;
 }
+
+.miscroll {
+    height: 200px;
+    border: 1px solid #ddd;
+    background: #f1f1f1;
+    overflow-y: scroll;
+}
