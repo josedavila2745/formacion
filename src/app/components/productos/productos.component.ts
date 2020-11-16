@@ -3,13 +3,13 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-formacion',
-  templateUrl: './formacion.component.html',
-  styleUrls: ['./formacion.component.scss']
+  selector: 'app-productos',
+  templateUrl: './productos.component.html',
+  styleUrls: ['./productos.component.scss']
 })
-export class FormacionComponent implements OnInit {
+export class ProductosComponent implements OnInit {
   errorMessage = '';
-  irav='empresa';
+  prodimg='assets/imgs/productos.jpg';
   constructor(private afAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit(): void {
@@ -23,6 +23,7 @@ export class FormacionComponent implements OnInit {
 
   }
   irA(cont:string):void{
-    (cont == 'ir') ? this.router.navigate(['/' + this.irav]) : this.irav=cont;
+    this.router.navigate(['/formacion']);
   }
+
 }

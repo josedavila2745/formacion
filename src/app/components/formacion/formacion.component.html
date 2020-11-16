@@ -9,8 +9,8 @@
     <div class="row">
         <h5 class="text-primary ml-2">Contenidos</h5>
         <div class="col-12">
-            <div class="tab-content border p-2 text-danger position-sticky" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-empresa" role="tabpanel" aria-labelledby="list-home-list"> &nbsp;Qué sabes de la Empresa ...</div>
+            <div class="tab-content border p-2 text-danger" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-empresa" role="tabpanel" aria-labelledby="list-empresa-list"> &nbsp;Qué sabes de la Empresa ...</div>
                 <div class="tab-pane fade" id="list-productos" role="tabpanel" aria-labelledby="list-productos-list">&nbsp;Cuánto sabes de los Productos ...</div>
                 <div class="tab-pane fade" id="list-beneficios" role="tabpanel" aria-labelledby="list-beneficios-list">&nbsp;Qué sabes de los Beneficios ...</div>
                 <div class="tab-pane fade" id="list-capacitaciones" role="tabpanel" aria-labelledby="list-capacitaciones-list">&nbsp;Qué sabes de las Capacitaciones ...</div>
@@ -18,17 +18,17 @@
         </div>
         <div class="col-12 mt-2">
             <div class="list-group" id="list-tab" role="tablist">
-                <a class="list-group-item list-group-item-action active" id="list-empresa-list" data-toggle="list" href="#list-empresa" role="tab" aria-controls="home">La Empresa</a>
-                <a class="list-group-item list-group-item-action" id="list-productos-list" data-toggle="list" href="#list-productos" role="tab" aria-controls="profile">Productos</a>
-                <a class="list-group-item list-group-item-action" id="list-beneficios-list" data-toggle="list" href="#list-beneficios" role="tab" aria-controls="messages">Beneficios</a>
-                <a class="list-group-item list-group-item-action" id="list-capacitaciones-list" data-toggle="list" href="#list-capacitaciones" role="tab" aria-controls="settings">Capacitaciones</a>
+                <a class="list-group-item list-group-item-action active" id="list-empresa-list" data-toggle="list" href="#list-empresa" role="tab" aria-controls="empresa" (click)="irA('empresa')">La Empresa</a>
+                <a class="list-group-item list-group-item-action" id="list-productos-list" data-toggle="list" href="#list-productos" role="tab" aria-controls="productos" (click)="irA('productos')">Productos</a>
+                <a class="list-group-item list-group-item-action" id="list-beneficios-list" data-toggle="list" href="#list-beneficios" role="tab" aria-controls="list" (click)="irA('beneficios')">Beneficios</a>
+                <a class="list-group-item list-group-item-action" id="list-capacitaciones-list" data-toggle="list" href="#list-capacitaciones" role="tab" aria-controls="capacitaciones" (click)="irA('capacitaciones')">Capacitaciones</a>
             </div>
         </div>
     </div>
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
-        <a class="navbar-brand" href="#"><span class="text-primary display-6">Ir</span></a>
-        <a class="navbar-brand" href="#"></a>
+        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Ir</span></a>
+        <a class="navbar-brand"></a>
         <a class="navbar-brand"><span class="text-success display-6" (click)="logout()"> Cerrar Sesión</span></a>
     </nav>
 </div>

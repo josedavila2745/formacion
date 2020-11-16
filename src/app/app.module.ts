@@ -6,10 +6,14 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
-import {AngularFireAuthModule} from '@angular/fire/auth';
+import { firebase, firebaseui, FirebaseUIModule } from 'firebaseui-angular';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './components/login/login.component';
 import { FormacionComponent } from './components/formacion/formacion.component';
+import { EmpresaComponent } from './components/empresa/empresa.component';
+import { ProductosComponent } from './components/productos/productos.component';
+import { BeneficiosComponent } from './components/beneficios/beneficios.component';
+import { CapacitacionesComponent } from './components/capacitaciones/capacitaciones.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -45,7 +49,11 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   declarations: [
     AppComponent,
     LoginComponent,
-    FormacionComponent
+    FormacionComponent,
+    EmpresaComponent,
+    ProductosComponent,
+    BeneficiosComponent,
+    CapacitacionesComponent
   ],
   imports: [
     BrowserModule,
