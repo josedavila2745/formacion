@@ -14,6 +14,7 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { BeneficiosComponent } from './components/beneficios/beneficios.component';
 import { CapacitacionesComponent } from './components/capacitaciones/capacitaciones.component';
+import { C11Component } from './contenidos/c11/c11.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -53,7 +54,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     EmpresaComponent,
     ProductosComponent,
     BeneficiosComponent,
-    CapacitacionesComponent
+    CapacitacionesComponent,
+    C11Component
   ],
   imports: [
     BrowserModule,
