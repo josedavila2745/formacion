@@ -1,13 +1,9 @@
-<div class="d-flex justify-content-between ">
-    <h4 class="text-success ml-1">{{ muser() }}</h4>
-    <span class="text-success mt-1 mr-2" (click)="logout()"> Salir </span></div>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item active text-danger" aria-current="page"><b>Contenidos</b></li>
     </ol>
 </nav>
 <div class="container">
-
     <div class="row">
         <div class="col-12">
             <img src="{{ empimg }}" class="card-img-top" alt="...">
@@ -18,95 +14,39 @@
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
                             <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Empresa
+                  Productos
                 </button>
                         </h2>
-                    </div>
-                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="col-12">
-                                <div class="list-group" id="list-tab" role="tablist">
-                                    <a class="list-group-item list-group-item-action active" id="list-11-list" data-toggle="list" role="tab" aria-controls="11" (click)="irA('c11')">La Empresa</a>
-                                    <a class="list-group-item list-group-item-action" id="list-12-list" data-toggle="list" role="tab" aria-controls="12" (click)="irA('c12')">Angel Breña</a>
-                                    <a class="list-group-item list-group-item-action" id="list-13-list" data-toggle="list" role="tab" aria-controls="13" (click)="irA('c13')">Modelo de negocios</a>
-                                    <a class="list-group-item list-group-item-action" id="list-14-list" data-toggle="list" role="tab" aria-controls="14" (click)="irA('c14')">Misceláneos</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingTwo">
                         <h2 class="mb-0">
                             <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Productos
+                  Planes y beneficios
                 </button>
                         </h2>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="col-12">
-                                <div class="list-group" id="list-tab" role="tablist">
-                                    <a class="list-group-item list-group-item-action active" id="list-11-list" data-toggle="list" role="tab" aria-controls="11" (click)="irA('c21')">Productos</a>
-                                    <a class="list-group-item list-group-item-action" id="list-12-list" data-toggle="list" role="tab" aria-controls="12" (click)="irA('c22')">Para que sirven</a>
-                                    <a class="list-group-item list-group-item-action" id="list-13-list" data-toggle="list" role="tab" aria-controls="13" (click)="irA('c23')">Uso</a>
-                                    <a class="list-group-item list-group-item-action" id="list-14-list" data-toggle="list" role="tab" aria-controls="14" (click)="irA('c24')">Advertencias</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingThree">
                         <h2 class="mb-0">
                             <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Beneficios
+                  Liderazgo
                 </button>
                         </h2>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="col-12">
-                                <div class="list-group" id="list-tab3" role="tablist">
-                                    <a class="list-group-item list-group-item-action active" id="list-empresa-list" data-toggle="list" role="tab" aria-controls="empresa" (click)="irA('c31')">Beneficios</a>
-                                    <a class="list-group-item list-group-item-action" id="list-angel-list" data-toggle="list" role="tab" aria-controls="productos" (click)="irA('c32')">Detalles</a>
-                                    <a class="list-group-item list-group-item-action" id="list-modelo-list" data-toggle="list" role="tab" aria-controls="list" (click)="irA('c33')">Cómo conseguirlos</a>
-                                    <a class="list-group-item list-group-item-action" id="list-miscelaneos-list" data-toggle="list" role="tab" aria-controls="capacitaciones" (click)="irA('c34')">Observaciones</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header" id="headingFour">
                         <h2 class="mb-0">
-                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFoure">
-                  Capaciones
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFoure" [routerLink]="['/capacitaciones']">
+                  Amor al Pr&oacute;jimo
                 </button>
                         </h2>
-                    </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                        <div class="card-body">
-                            <div class="col-12">
-                                <div class="list-group" id="list-tab4" role="tablist">
-                                    <a class="list-group-item list-group-item-action active" id="list-41-list" data-toggle="list" role="tab" aria-controls="41" (click)="irA('c41')">Qué son ... </a>
-                                    <a class="list-group-item list-group-item-action" id="list-42-list" data-toggle="list" role="tab" aria-controls="42" (click)="irA('c42')">Capacitaciones</a>
-                                    <a class="list-group-item list-group-item-action" id="list-43-list" data-toggle="list" role="tab" aria-controls="43" (click)="irA('c43')">Detalles</a>
-                                    <a class="list-group-item list-group-item-action" id="list-44-list" data-toggle="list" role="tab" aria-controls="44" (click)="irA('c44')">Observaciones</a>
-                                </div>
-                                <h2 style="color:transparent">@@@@@@@@@</h2>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <nav class="navbar fixed-bottom navbar-light bg-light">
-        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Ver</span></a>
-        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Video</span></a>
-        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">PDF</span></a>
-        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Test</span></a>
-    </nav>
 </div>

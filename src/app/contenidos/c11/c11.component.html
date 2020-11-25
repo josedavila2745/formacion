@@ -1,11 +1,3 @@
-<div class="d-flex justify-content-between ">
-    <h4 class="text-success ml-1">{{ muser() }}</h4>
-    <span class="text-success mt-1 mr-2" (click)="logout()"> Salir </span></div>
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active text-danger" aria-current="page" (click)="irA('formacion')"><b>Contenidos</b></li>
-    </ol>
-</nav>
 <div class="container">
 
     <div class="row">
@@ -13,17 +5,16 @@
             <img src="{{ empimg }}" class="card-img-top" alt="...">
         </div>
         <div class="col-12 mt-2">
-         <a onclick="('window.open('https://www.w3schools.com'); ")></a>
+            <video width="300" height="120" controls>
+            <source src="{{videoyou}}" type="video/mp4">
 
-
-
+          Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="col-12">
+            <img src="{{ empimg }}" class="card-img-top" alt="...">
+        </div>
+        <div class="col-12">
+            <img src="{{ empimg }}" class="card-img-top" alt="...">
         </div>
     </div>
-
-    <nav class="navbar fixed-bottom navbar-light bg-light">
-        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Ver</span></a>
-        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Video</span></a>
-        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">PDF</span></a>
-        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Test</span></a>
-    </nav>
-</div>

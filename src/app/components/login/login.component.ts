@@ -2,8 +2,7 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { User } from './../../models/user.model';
-import { Todo } from './../../models/todo.model';
+
 
 
 
@@ -43,7 +42,7 @@ export class LoginComponent implements OnInit {
 
  signIn() {
   this.afAuth.signInWithEmailAndPassword(this.loginForm.value.username, this.loginForm.value.password)
-  .then((resp) => {console.log(JSON.stringify(resp));localStorage.setItem("email", resp.user.email);this.router.navigate(['/formacion']);})
+  .then((resp) => {/*console.log(JSON.stringify(resp));*/localStorage.setItem("email", resp.user.email); this.router.navigate(['/formacion']);})
   .catch(response => {this.errorMessage = response.message;});
 }
 }

@@ -14,6 +14,7 @@ export class C11Component implements OnInit {
   capimg='assets/imgs/muchos-afiliados.jpg';
   empimg='assets/imgs/productos-angel-brena.jpg';
   prodimg='assets/imgs/productos.jpg';
+  videoyou='assets/videos/videoyou.mp4';
   constructor(private afAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit(): void {

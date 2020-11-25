@@ -1,0 +1,183 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <img src="{{ empimg }}" class="card-img-top" alt="...">
+        </div>
+        <div class="col-12 mt-2">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Productos
+              </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <div class="list-group" id="list-tab" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" id="list-11-list" data-toggle="list" role="tab" aria-controls="11" (click)="irA('c11')">La Empresa</a>
+                                    <a class="list-group-item list-group-item-action" id="list-12-list" data-toggle="list" role="tab" aria-controls="12" (click)="irA('c12')">Angel Breña</a>
+                                    <a class="list-group-item list-group-item-action" id="list-13-list" data-toggle="list" role="tab" aria-controls="13" (click)="irA('c13')">Modelo de negocios</a>
+                                    <a class="list-group-item list-group-item-action" id="list-14-list" data-toggle="list" role="tab" aria-controls="14" (click)="irA('c14')">Misceláneos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Planes y beneficios
+              </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <div class="list-group" id="list-tab" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" id="list-11-list" data-toggle="list" role="tab" aria-controls="11" (click)="irA('c21')">Productos</a>
+                                    <a class="list-group-item list-group-item-action" id="list-12-list" data-toggle="list" role="tab" aria-controls="12" (click)="irA('c22')">Para que sirven</a>
+                                    <a class="list-group-item list-group-item-action" id="list-13-list" data-toggle="list" role="tab" aria-controls="13" (click)="irA('c23')">Uso</a>
+                                    <a class="list-group-item list-group-item-action" id="list-14-list" data-toggle="list" role="tab" aria-controls="14" (click)="irA('c24')">Advertencias</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Liderazgo
+              </button>
+                        </h2>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFoure">
+                Amor al Pr&oacute;jimo
+              </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="col-12">
+                                <div class="list-group" id="list-tab4" role="tablist">
+                                    <a class="list-group-item list-group-item-action active" id="list-41-list" data-toggle="list" role="tab" aria-controls="41" (click)="irA('c41')">Qué son ... </a>
+                                    <a class="list-group-item list-group-item-action" id="list-42-list" data-toggle="list" role="tab" aria-controls="42" (click)="irA('c42')">Capacitaciones</a>
+                                    <a class="list-group-item list-group-item-action" id="list-43-list" data-toggle="list" role="tab" aria-controls="43" (click)="irA('c43')">Detalles</a>
+                                    <a class="list-group-item list-group-item-action" id="list-44-list" data-toggle="list" role="tab" aria-controls="44" (click)="irA('c44')">Observaciones</a>
+                                </div>
+                                <h2 style="color:transparent">@@@@@@@@@</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer *ngIf="muser()">
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <a class="navbar-brand" data-toggle="modal" data-target="#modalYT"><span class="text-primary display-6 spanini" (click)="irA('ir')">Ver</span></a>
+        <a class="navbar-brand" data-toggle="modal" data-target="#modalVM"><span class="text-primary display-6" (click)="irA('ir')">Video</span></a>
+        <a class="navbar-brand" data-toggle="modal" data-target="#modalGM"><span class="text-primary display-6" (click)="irA('ir')">PDF</span></a>
+        <a class="navbar-brand"><span class="text-primary display-6" (click)="irA('ir')">Test</span></a>
+    </nav>
+</footer>
+<!--Borrar-->
+<!--Modal: Name-->
+<div class="modal fade" id="modalYT" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Body-->
+            <div class="modal-body mb-0 p-0">
+
+                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/A3PDXmYoF5U" allowfullscreen></iframe>
+                </div>
+
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+        <!--/.Content-->
+
+    </div>
+</div>
+<!--Modal: Name-->
+
+<!--Modal: Name-->
+<div class="modal fade" id="modalVM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Body-->
+            <div class="modal-body mb-0 p-0">
+
+                <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/115098447" allowfullscreen></iframe>
+                </div>
+
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+        <!--/.Content-->
+
+    </div>
+</div>
+<!--Modal: Name-->
+
+<!--Modal: Name-->
+<div class="modal fade" id="modalGM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Body-->
+            <div class="modal-body mb-0 p-0">
+
+                <!--Google map-->
+                <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 300px">
+                    <iframe src="https://maps.google.com/maps?q=chicago&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+
+                <!--Google Maps-->
+
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+
+                <button type="button" class="btn btn-primary btn-md">Save location <i class="fas fa-map-marker-alt ml-1"></i></button>
+                <button type="button" class="btn btn-outline-primary btn-md" data-dismiss="modal">Close <i class="fas fa-times ml-1"></i></button>
+
+            </div>
+
+        </div>
+        <!--/.Content-->
+
+    </div>
+</div>
+<!--Modal: Name-->
+<!--Borrar-->

@@ -18,16 +18,4 @@ export class FormacionComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  muser():string {
-    let vuser=localStorage.getItem("email");
-   return vuser.substring(0,vuser.indexOf('@'));
  }
-  logout(): void {
-    this.afAuth.signOut().then(() => {localStorage.setItem("email", "");this.router.navigate(['/nologgeado']);})
-    .catch(response => {this.errorMessage = response.message;});
-
-  }
-  irA(cont:string):void{
-    (cont == 'ir') ? this.router.navigate(['/' + this.irav]) : this.irav=cont;
-  }
-}

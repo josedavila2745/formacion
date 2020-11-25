@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,11 +11,14 @@ import { firebase, firebaseui, FirebaseUIModule } from 'firebaseui-angular';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './components/login/login.component';
 import { FormacionComponent } from './components/formacion/formacion.component';
-import { EmpresaComponent } from './components/empresa/empresa.component';
-import { ProductosComponent } from './components/productos/productos.component';
-import { BeneficiosComponent } from './components/beneficios/beneficios.component';
 import { CapacitacionesComponent } from './components/capacitaciones/capacitaciones.component';
+import { ProductosModule } from './productos/productos.module';
 import { C11Component } from './contenidos/c11/c11.component';
+import { Ex1Component } from './cuestionarios/ex1/ex1.component';
+import { Ex4Component } from './cuestionarios/ex4/ex4.component';
+
+
+
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -48,23 +52,25 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
 
 @NgModule({
   declarations: [
+
     AppComponent,
     LoginComponent,
-    FormacionComponent,
-    EmpresaComponent,
-    ProductosComponent,
-    BeneficiosComponent,
     CapacitacionesComponent,
-    C11Component
+    C11Component,
+    FormacionComponent,
+    Ex1Component,
+    Ex4Component
   ],
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,
+    ProductosModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
+  //exports: [C11Component],
   providers: [],
   bootstrap: [AppComponent]
 })
