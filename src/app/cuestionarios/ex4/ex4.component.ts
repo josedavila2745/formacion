@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FirestoreService } from './../../services/firestore.service';
+import { FirebaseUIModule } from 'firebaseui-angular';
+import { map } from 'rxjs/operators';
+import { Afiliado } from 'src/app/models/afiliado.model';
 
 @Component({
   selector: 'app-ex4',
@@ -12,7 +16,17 @@ export class Ex4Component implements OnInit {
   datos=false;
   vv=[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
   vr=[]; ps10=[];
-  constructor() { }
+
+  constructor(private afiliadosService: FirestoreService ) { }
+
+  public afiliadosList: Afiliado[] = [];
+  public tienename= "";
+  losAfiliados: any;
+  Email = localStorage.getItem('email');
+  Current=JSON.parse(localStorage.getItem('current'));
+
+
+  submitted = false;
 
   ngOnInit(): void {
     let vt=this.vv;
@@ -21,17 +35,65 @@ export class Ex4Component implements OnInit {
         let dd1=[];
         let yy=Math.round(Math.random()*vl);
         dd1= vt.filter((e,i)=>i !=yy );
-        vt=dd1;
+        vt= dd1;
     }
     this.vr=vt;
     this.vr.map(v => this.ps10.push(this.cuest[v]));
     //console.log(JSON.stringify(this.ps10));
+    //console.log(this.getAfiliados());
+    //this.saveAfiliado({nombres:"Angel",apellidos:"Breña",email:"perumundo@gmail.com",movil:"555555",nota1:0,nota2:0,nota3:0,nota4:0})
+    //this.traerAfiliados();
+    if(this.Current.nombres != "" ){this.tienename=this.Current.nombres; this.nota=this.Current.nota4};
+    console.log(this.tienename+" -> :"+this.nota);
   }
 
+  traerAfiliados(): void {
+    this.afiliadosService.getAll().snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ id: c.payload.doc.id, ...c.payload.doc.data() })
+        )
+      )
+    ).subscribe(data => {
+
+      //let current=data.filter(e=>e.email==this.Email); localStorage.setItem('current', JSON.stringify(current[0]) );
+      //let current1=data.filter(e=>e.email==this.Email);current1=current1[0]; if (typeof current1 == "undefined") {current1=this.current};localStorage.setItem('current', JSON.stringify(current1)) ;
+      this.losAfiliados=data;
+    });
+  }
+
+  registrar(n:string, l:string): void {
+    let afiliado= {nombres: n, apellidos: l, email: this.Email, movil: "", nota1: 0, nota2: 0, nota3: 0, nota4: 0, id: ""};
+    this.afiliadosService.create(afiliado).then(() => {
+      console.log('Created new item successfully!');
+      this.submitted = true;
+    });
+  }
+
+  updateAfiliado(n:number): void {
+    const data = JSON.parse(localStorage.getItem('current'));
+          data.nota4=n;
+
+    this.afiliadosService.update(data.id, data)
+      .then(() => localStorage.setItem('current', JSON.stringify(data) ))
+      .catch(err => console.log(err));
+  }
   calNota(i:number,v:number){
       this.vnotas[i]=v;
       this.nota=this.vnotas.reduce((a, b) => a + b, 0);
       //console.log(this.nota);
   }
-
+  /*
+  getAfiliados(){
+    console.log(this.afiliadosService.getAll());
+  }
+  saveAfiliado(e:Afiliado):void{
+    this.afiliadosService.create(e);
+  }*/
+  getAfiliados(): void {
+    this.afiliadosService.getAfiliados().subscribe((res) => {
+      this.afiliadosList = res.map((afil) => {   return { ...afil.payload.doc.data() as {}, id: afil.payload.doc.id  } as Afiliado;
+      });
+    });
+  }
 }

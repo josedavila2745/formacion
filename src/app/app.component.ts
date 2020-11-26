@@ -26,7 +26,7 @@ export class AppComponent implements OnInit{
    return vuser.substring(0,vuser.indexOf('@'));
   }
   logout(): void {
-    this.afAuth.signOut().then(() => {localStorage.setItem("email", ""); this.router.navigate(['/nologgeado']);})
+    this.afAuth.signOut().then(() => {localStorage.setItem("email", ""); localStorage.setItem("current", "");this.router.navigate(['/nologgeado']);})
     .catch(response => {this.errorMessage = response.message;});
   }
   irA(cont:string):void{

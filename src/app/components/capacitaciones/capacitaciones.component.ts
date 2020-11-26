@@ -23,7 +23,7 @@ export class CapacitacionesComponent implements OnInit {
     return localStorage.getItem("email");
   }
   logout(): void {
-    this.afAuth.signOut().then(() => {localStorage.setItem("email", "");this.router.navigate(['/nologgeado']);})
+    this.afAuth.signOut().then(() => {localStorage.setItem("email", "");localStorage.setItem("current", "");this.router.navigate(['/nologgeado']);})
     .catch(response => {this.errorMessage = response.message;});
 
   }
