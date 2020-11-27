@@ -6,6 +6,7 @@ import { EmpresaComponent} from './components/empresa/empresa.component';
 import { BeneficiosComponent} from './components/beneficios/beneficios.component';
 import { CapacitacionesComponent} from './components/capacitaciones/capacitaciones.component';
 import { C11Component } from './contenidos/c11/c11.component';
+import { Diploma4Component } from './diplomas/diploma4/diploma4.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'empresa', component: EmpresaComponent },
   { path: 'beneficios', component: BeneficiosComponent },
   { path: 'capacitaciones', component: CapacitacionesComponent },
+  { path: 'diploma4', component : Diploma4Component},
   { path: 'c11', component: C11Component },
 ];
 

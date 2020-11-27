@@ -16,6 +16,7 @@ import { ProductosModule } from './productos/productos.module';
 import { C11Component } from './contenidos/c11/c11.component';
 import { Ex1Component } from './cuestionarios/ex1/ex1.component';
 import { Ex4Component } from './cuestionarios/ex4/ex4.component';
+import { Diploma4Component } from './diplomas/diploma4/diploma4.component';
 
 
 
@@ -59,7 +60,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     C11Component,
     FormacionComponent,
     Ex1Component,
-    Ex4Component
+    Ex4Component,
+    Diploma4Component
   ],
   imports: [
     BrowserModule,
