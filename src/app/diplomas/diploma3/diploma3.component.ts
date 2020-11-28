@@ -7,7 +7,7 @@ import html2canvas from 'html2canvas';
   templateUrl: './diploma3.component.html',
   styleUrls: ['./diploma3.component.scss']
 })
-export class Diploma3Component implements OnInit {
+export class Diploma3Component {
   datos=JSON.parse(localStorage.getItem('current'));
   diploma='assets/imgs/diploma4.jpg';
   nota=this.datos.nota4;
