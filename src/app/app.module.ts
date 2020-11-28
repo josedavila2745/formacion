@@ -17,6 +17,9 @@ import { C11Component } from './contenidos/c11/c11.component';
 import { Ex1Component } from './cuestionarios/ex1/ex1.component';
 import { Ex4Component } from './cuestionarios/ex4/ex4.component';
 import { Diploma4Component } from './diplomas/diploma4/diploma4.component';
+import { LiderazgoComponent } from './components/liderazgo/liderazgo.component';
+import { Diploma3Component } from './diplomas/diploma3/diploma3.component';
+import { Ex3Component } from './cuestionarios/ex3/ex3.component';
 
 
 
@@ -61,7 +64,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     FormacionComponent,
     Ex1Component,
     Ex4Component,
-    Diploma4Component
+    Diploma4Component,
+    LiderazgoComponent,
+    Diploma3Component,
+    Ex3Component
   ],
   imports: [
     BrowserModule,
