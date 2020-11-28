@@ -8,10 +8,11 @@ import html2canvas from 'html2canvas';
   styleUrls: ['./diploma4.component.scss']
 })
 export class Diploma4Component  {
-  name = 'Angular 6';
+  datos=JSON.parse(localStorage.getItem('current'));
   diploma='assets/imgs/diploma4.jpg';
-  nota=14;
-  nombre='Angel Breña';
+  nota=this.datos.nota4;
+  nombre=this.datos.nombres+" "+this.datos.apellidos;
+
   @ViewChild('screen') screen: ElementRef;
   @ViewChild('canvas') canvas: ElementRef;
   @ViewChild('downloadLink') downloadLink: ElementRef;
