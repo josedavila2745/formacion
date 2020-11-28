@@ -1,17 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-diploma4',
   templateUrl: './diploma4.component.html',
   styleUrls: ['./diploma4.component.scss']
 })
-export class Diploma4Component implements OnInit {
+export class Diploma4Component  {
+  name = 'Angular 6';
   diploma='assets/imgs/diploma4.jpg';
   nota=14;
   nombre='Angel Breña';
-  constructor() { }
-
-  ngOnInit(): void {
+  @ViewChild('screen') screen: ElementRef;
+  @ViewChild('canvas') canvas: ElementRef;
+  @ViewChild('downloadLink') downloadLink: ElementRef;
+  constructor(private router: Router) { }
+  downloadImage(){
+    html2canvas(this.screen.nativeElement).then(canvas => {
+      this.canvas.nativeElement.src = canvas.toDataURL();
+      this.downloadLink.nativeElement.href = canvas.toDataURL('image/png');
+      this.downloadLink.nativeElement.download = 'marble-diagram.png';
+      this.downloadLink.nativeElement.click();
+    });
   }
-
+  regresar(){
+    this.router.navigate(['/capacitaciones']);
+  }
 }
+
+
+
