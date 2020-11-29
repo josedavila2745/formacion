@@ -12,7 +12,6 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { LoginComponent } from './components/login/login.component';
 import { FormacionComponent } from './components/formacion/formacion.component';
 import { CapacitacionesComponent } from './components/capacitaciones/capacitaciones.component';
-import { ProductosModule } from './productos/productos.module';
 import { C11Component } from './contenidos/c11/c11.component';
 import { Ex1Component } from './cuestionarios/ex1/ex1.component';
 import { Ex4Component } from './cuestionarios/ex4/ex4.component';
@@ -20,6 +19,7 @@ import { Diploma4Component } from './diplomas/diploma4/diploma4.component';
 import { LiderazgoComponent } from './components/liderazgo/liderazgo.component';
 import { Diploma3Component } from './diplomas/diploma3/diploma3.component';
 import { Ex3Component } from './cuestionarios/ex3/ex3.component';
+import { ProductosComponent } from './components/productos/productos.component';
 
 
 
@@ -67,13 +67,13 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     Diploma4Component,
     LiderazgoComponent,
     Diploma3Component,
-    Ex3Component
+    Ex3Component,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,
-    ProductosModule,
-    AppRoutingModule,
+     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig)
