@@ -1,0 +1,26 @@
+<div #screen id="table" class="">
+    <div id="diploma" class="container-fluid "></div>
+    <div id="" class="row justify-content-center align-items-center mx-auto my-auto" style="width: 100vw; height: 70vw; background-image: url({{diploma}});
+  background-repeat: no-repeat; background-position: center center; background-size: contain;">
+        <div class="mt-4">
+            <p class="mt-4 motivo1 text-center" style="color:transparent">Participante</p>
+            <div style="height:5%"></div>
+
+            <h1 class="mt-4 pt-4 blackletter text-center">
+                {{nombre}}
+            </h1>
+            <p id="" class="motivo text-center mb-4 pb-4"> Nota: {{nota}} puntos.</p>
+        </div>
+    </div>
+</div>
+
+<form>
+    <div class="row justify-content-center align-items-center">
+        <p><button class="btn btn-primary" type="submit" (click)="regresar()">Regresar</button>&nbsp;<button id="btnCapturar" class="btn btn-success" type="submit" (click)="downloadImage()">Guardar</button></p>
+    </div>
+</form>
+
+<div id="download">
+    <img #canvas>
+    <a #downloadLink></a>
+</div>

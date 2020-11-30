@@ -1,6 +1,8 @@
+//******************* */
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-empresa',
@@ -9,7 +11,11 @@ import { Router } from '@angular/router';
 })
 export class EmpresaComponent implements OnInit {
   errorMessage = '';
-  empimg='assets/imgs/productos-angel-brena.jpg';
+  pr='Empresa';
+  capimg='assets/imgs/muchos-afiliados.jpg';
+  aap1 = 'assets/imgs/amor-al-projimo1.jpg';
+  aap2 = 'assets/imgs/amor-al-projimo2.jpg';
+  aap3 = 'assets/imgs/amor-al-projimo3.jpg';
   constructor(private afAuth: AngularFireAuth, private router: Router) { }
 
   ngOnInit(): void {
@@ -18,12 +24,11 @@ export class EmpresaComponent implements OnInit {
     return localStorage.getItem("email");
   }
   logout(): void {
-    this.afAuth.signOut().then(() => {localStorage.setItem("email", "");this.router.navigate(['/nologgeado']);})
+    this.afAuth.signOut().then(() => {localStorage.setItem("email", "");localStorage.setItem("current", "");this.router.navigate(['/nologgeado']);})
     .catch(response => {this.errorMessage = response.message;});
 
   }
   irA(cont:string):void{
     this.router.navigate(['/formacion']);
   }
-
 }

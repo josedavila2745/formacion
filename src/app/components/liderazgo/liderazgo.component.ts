@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { Ex4Component } from './../../cuestionarios/ex4/ex4.component';
+//import { Ex4Component } from './../../cuestionarios/ex4/ex4.component';
 
 
 @Component({
