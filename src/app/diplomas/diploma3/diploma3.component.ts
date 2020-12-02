@@ -9,8 +9,8 @@ import html2canvas from 'html2canvas';
 })
 export class Diploma3Component {
   datos=JSON.parse(localStorage.getItem('current'));
-  diploma='assets/imgs/diploma4.jpg';
-  nota=this.datos.nota4;
+  diploma='assets/imgs/diploma3.jpg';
+  nota=this.datos.nota3;
   nombre=this.datos.nombres+" "+this.datos.apellidos;
 
   @ViewChild('screen') screen: ElementRef;
@@ -26,7 +26,7 @@ export class Diploma3Component {
     });
   }
   regresar(){
-    this.router.navigate(['/capacitaciones']);
+    this.router.navigate(['/liderazgo']);
   }
 }
 
