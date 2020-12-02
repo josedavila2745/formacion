@@ -37,7 +37,7 @@ export class Ex3Component implements OnInit {
     {
       "preg": "Un buen Líder logra conseguir objetivos",
       "resps": [
-        "Gritos",
+        "A gritos",
         "A golpes",
         "Con inteligencia"
       ],
@@ -74,7 +74,7 @@ export class Ex3Component implements OnInit {
       ]
     },
     {
-      "preg": "un Líder tiene",
+      "preg": "Un Líder tiene",
       "resps": [
         "Objetivos",
         "Objetivos y proyectos",
