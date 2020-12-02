@@ -8,6 +8,8 @@ import { BeneficiosComponent} from './components/beneficios/beneficios.component
 import { CapacitacionesComponent} from './components/capacitaciones/capacitaciones.component';
 import { LiderazgoComponent } from './components/liderazgo/liderazgo.component';
 import { C11Component } from './contenidos/c11/c11.component';
+import { Diploma1Component } from './diplomas/diploma1/diploma1.component';
+import { Diploma2Component } from './diplomas/diploma2/diploma2.component';
 import { Diploma3Component } from './diplomas/diploma3/diploma3.component';
 import { Diploma4Component } from './diplomas/diploma4/diploma4.component';
 
@@ -22,6 +24,8 @@ const routes: Routes = [
   { path: 'beneficios', component: BeneficiosComponent },
   { path: 'liderazgo', component: LiderazgoComponent },
   { path: 'capacitaciones', component: CapacitacionesComponent },
+  { path: 'diploma1', component : Diploma1Component},
+  { path: 'diploma2', component : Diploma2Component},
   { path: 'diploma3', component : Diploma3Component},
   { path: 'diploma4', component : Diploma4Component},
   { path: 'c11', component: C11Component },

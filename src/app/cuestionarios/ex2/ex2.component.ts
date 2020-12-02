@@ -46,7 +46,7 @@ export class Ex2Component implements OnInit {
     //console.log(this.getAfiliados());
     //this.saveAfiliado({nombres:"Angel",apellidos:"Breña",email:"perumundo@gmail.com",movil:"555555",nota1:0,nota2:0,nota3:0,nota4:0})
     this.traerAfiliados();
-    if(this.Current.nombres != "" ){this.tienename=this.Current.nombres; this.nota=this.Current.nota4};
+    if(this.Current.nombres != "" ){this.tienename=this.Current.nombres; this.nota=this.Current.nota2};
 
   }
 
@@ -83,7 +83,7 @@ export class Ex2Component implements OnInit {
     const data = JSON.parse(localStorage.getItem('current'));
     this.botonenviar='Intenta de Nuevo'
     this.nota=this.notap;
-    data.nota4 = this.nota;
+    data.nota2 = this.nota;
     let afilx = this.losAfiliados.filter(e=>e.email==data.email);
     console.log(JSON.stringify(afilx));
     this.afiliadosService.update(afilx[0].ida, data)
