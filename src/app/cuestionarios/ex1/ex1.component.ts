@@ -12,7 +12,191 @@ import { Afiliado } from 'src/app/models/afiliado.model';
   styleUrls: ['./ex1.component.scss']
 })
 export class Ex1Component implements OnInit {
-  cuest=[{"preg":"Sientes  odio hacia otra persona","resps":["Si","No"],"vals":[0,2]},{"preg":"Te llevas bien con tus vecinos","resps":["Si","No"],"vals":[2,0]},{"preg": "A cuántas fiestas has ido","resps":["A ninguna","A una o dos","A más de 2"],"vals":[2,0,0]},{"preg": "Pandemia es","resps":["Un baile moderno","Una calamidad mundial","Anemia del pan"],"vals":[0,2,0]},{"preg": "Amor al Prójimo es","resps":["Amar a un señor llamado Prójimo","Apoyar a otro para pedir su voto","Preocuparse y ayudar a los demás"],"vals":[0,0,2]},{"preg": "A cuántas personas has ayudado este año","resps":["A ninguna","A menos de 3","A más de 5"],"vals":[0,2,2]},{"preg": "Te lavas las manos al llegar a casa","resps":["Si","No"],"vals":[2,0]},{"preg": "Si alguien no lleva facial en el bus","resps":["Lo felicitas","Lo imitas","Le reclamas","Lo golpeas","No haces nada"],"vals":[0,0,2,0,0]},{"preg": "A cuántas fiestas has ido","resps":["A ninguna","A una o dos","A más de 2"],"vals":[2,0,0]},{"preg": "Te preocupa el COVID 19","resps":["Si","No"],"vals":[2,0]},{"preg": "Respetas la cuarentena","resps":["Si","No"],"vals":[2,0]},{"preg": "Mantienes la distancia de metro y medio","resps":["Si","A veces","No"],"vals":[2,0,0]},{"preg": "Comes saludable","resps":["Si","No"],"vals":[2,0]},{"preg": "Ayudas a las autoridades","resps":["Si","No"],"vals":[2,0]},{"preg": "Ayudas a los infectados","resps":["Si","No"],"vals":[2,0]}];
+  cuest=[
+    {
+      "preg": "Productos Angel Breña es un MLM",
+      "resps": [
+        "Si",
+        "No"
+      ],
+      "vals": [
+        2,
+        0
+      ]
+    },
+    {
+      "preg": "Los afiliados compran a menor precio",
+      "resps": [
+        "Si",
+        "No"
+      ],
+      "vals": [
+        2,
+        0
+      ]
+    },
+    {
+      "preg": "Cuánto se gana si te afilias",
+      "resps": [
+        "Nada",
+        "Más o menos",
+        "Mucho"
+      ],
+      "vals": [
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "preg": "Los productos de la empresa son",
+      "resps": [
+        "Medicina",
+        "Alimentos funcionales",
+        "pura paja"
+      ],
+      "vals": [
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "preg": "El Multivitamínico sirve ",
+      "resps": [
+        "Para fortalecer el organismo",
+        "Para nada es solo una bebida",
+        "Para engordar"
+      ],
+      "vals": [
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "preg": "El Nopaloe sirve",
+      "resps": [
+        "Para atraer moscas",
+        "Favorecer la evacuación",
+        "Favorecer el interior de estómago"
+      ],
+      "vals": [
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "preg": "Cualquiera puede comprar productos",
+      "resps": [
+        "Si",
+        "No"
+      ],
+      "vals": [
+        2,
+        0
+      ]
+    },
+    {
+      "preg": "Qué producto no pertenece a la empresa",
+      "resps": [
+        "Bicarbonato de sodio",
+        "Aromaterapia",
+        "Agua San Luis",
+        "Nutrinmunocan",
+        "Aceite de magnesio"
+      ],
+      "vals": [
+        0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "preg": "Para la próstata recomendarías ",
+      "resps": [
+        "Maca Negra",
+        "Inka Cola",
+        "Perfumes"
+      ],
+      "vals": [
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "preg": "Se puede afiliar ilimitadamente",
+      "resps": [
+        "Si",
+        "No"
+      ],
+      "vals": [
+        2,
+        0
+      ]
+    },
+    {
+      "preg": "Conviene seguir las recomendaciones de uso",
+      "resps": [
+        "Si",
+        "No"
+      ],
+      "vals": [
+        2,
+        0
+      ]
+    },
+    {
+      "preg": "Conviene consultar al médíco",
+      "resps": [
+        "Si",
+        "No",
+        "Da igual"
+      ],
+      "vals": [
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "preg": "Un afiliado puede vender a otro",
+      "resps": [
+        "Si",
+        "No"
+      ],
+      "vals": [
+        2,
+        0
+      ]
+    },
+    {
+      "preg": "Puedes mezclar productos coon otros no recomendados",
+      "resps": [
+        "Si",
+        "No"
+      ],
+      "vals": [
+        0,
+        2
+      ]
+    },
+    {
+      "preg": "Para consumir debes afiliarte",
+      "resps": [
+        "Si",
+        "No"
+      ],
+      "vals": [
+        2,
+        0
+      ]
+    }
+  ];
   nota=0;
   notap=0;
   vnotas=[0,0,0,0,0,0,0,0,0,0];
