@@ -2,9 +2,9 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-
 import { FirestoreService } from './../../services/firestore.service';
 import { FirebaseUIModule } from 'firebaseui-angular';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Afiliado } from 'src/app/models/afiliado.model';
 
@@ -25,11 +25,13 @@ export class LoginComponent implements OnInit {
  img1='assets/imgs/amor-al-projimo.jpg';
  img2='assets/imgs/muchos-afiliados.jpg';
  img3='assets/imgs/productos-angel-brena.jpg';
+ item$: Observable<any[]>;
  constructor(private afAuth: AngularFireAuth,
    private router: Router,
    private fb: FormBuilder,
    private ngZone: NgZone,
-   private afiliadosService: FirestoreService ) { }
+   private afiliadosService: FirestoreService ) {
+    }
 
 
 
@@ -41,6 +43,7 @@ export class LoginComponent implements OnInit {
     username: ['', Validators.required],
     password: ['', Validators.required]
   });
+  this.afiliadosService.listar();
   }
 
 
