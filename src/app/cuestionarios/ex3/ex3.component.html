@@ -4,207 +4,28 @@
     </div>
     <div class="container p-1">
         <div class="accordion" id="accordionExample">
-
-            <div class="card">
-                <div class="card-header" id="p0">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" data-target="#r0" aria-expanded="false" aria-controls="r0">
-              1.-&nbsp;{{ps10[0].preg}}
+            <div *ngFor="let pr of ps10; let ind = index;">
+                <div class="card">
+                    <div class="card-header" id="{{'p'+ ind}}">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" [attr.data-target]="'#r' + ind" aria-expanded="false" [attr.aria-controls]="'r'+ ind">
+                    {{ ind + 1 }}.- {{ pr.preg }}
             </button>
-                    </h2>
-                </div>
-                <div id="r0" class="collapse" aria-labelledby="p0" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div *ngFor="let resp of ps10[0].resps; let val=index;">
-                            <div class="form-check mt-1">
-                                <input class="form-check-input" type="radio" name="rb0" (click)="calNota(0,ps10[0].vals[val])">
-                                <label class="form-check-label"> {{resp}} </label>
+                        </h2>
+                    </div>
+                    <div id="{{'r'+ ind}}" class="collapse" aria-labelledby="p0" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div *ngFor="let resp of pr.resps; let val=index;">
+                                <div class="form-check mt-1" *ngIf="resp">
+                                    <input class="form-check-input" type="radio" name="{{'rb' + ind}}" (click)="calNota(ind, pr.vals[val])">
+                                    <label class="form-check-label"> {{resp}} </label>
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-header" id="p1">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" data-target="#r1" aria-expanded="false" aria-controls="r1">
-            2.-&nbsp;{{ps10[1].preg}}
-          </button>
-                    </h2>
-                </div>
-                <div id="r1" class="collapse" aria-labelledby="p1" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div *ngFor="let resp of ps10[1].resps; let val=index;">
-                            <div class="form-check mt-1">
-                                <input class="form-check-input" type="radio" name="rb1" (click)="calNota(1,ps10[1].vals[val])">
-                                <label class="form-check-label"> {{resp}} </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="p2">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" data-target="#r2" aria-expanded="false" aria-controls="r2">
-            3.-&nbsp;{{ps10[2].preg}}
-          </button>
-                    </h2>
-                </div>
-                <div id="r2" class="collapse" aria-labelledby="p2" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div *ngFor="let resp of ps10[2].resps; let val=index;">
-                            <div class="form-check mt-1">
-                                <input class="form-check-input" type="radio" name="rb2" (click)="calNota(2,ps10[2].vals[val])">
-                                <label class="form-check-label"> {{resp}} </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="p3">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" data-target="#r3" aria-expanded="false" aria-controls="r3">
-          4.-&nbsp;{{ps10[3].preg}}
-        </button>
-                    </h2>
-                </div>
-                <div id="r3" class="collapse" aria-labelledby="p3" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div *ngFor="let resp of ps10[3].resps; let val=index;">
-                            <div class="form-check mt-1">
-                                <input class="form-check-input" type="radio" name="rb1" (click)="calNota(3,ps10[3].vals[val])">
-                                <label class="form-check-label"> {{resp}} </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="p4">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" data-target="#r4" aria-expanded="false" aria-controls="r4">
-            5.-&nbsp;{{ps10[4].preg}}
-          </button>
-                    </h2>
-                </div>
-                <div id="r4" class="collapse" aria-labelledby="p4" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div *ngFor="let resp of ps10[4].resps; let val=index;">
-                            <div class="form-check mt-1">
-                                <input class="form-check-input" type="radio" name="rb4" (click)="calNota(4,ps10[4].vals[val])">
-                                <label class="form-check-label"> {{resp}} </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="p5">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" data-target="#r5" aria-expanded="false" aria-controls="r5">
-          6.-&nbsp;{{ps10[5].preg}}
-        </button>
-                    </h2>
-                </div>
-                <div id="r5" class="collapse" aria-labelledby="p5" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div *ngFor="let resp of ps10[5].resps; let val=index;">
-                            <div class="form-check mt-1">
-                                <input class="form-check-input" type="radio" name="rb5" (click)="calNota(5,ps10[5].vals[val])">
-                                <label class="form-check-label"> {{resp}} </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="p6">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" data-target="#r6" aria-expanded="false" aria-controls="r6">
-          7.-&nbsp;{{ps10[6].preg}}
-        </button>
-                    </h2>
-                </div>
-                <div id="r6" class="collapse" aria-labelledby="p6" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div *ngFor="let resp of ps10[6].resps; let val=index;">
-                            <div class="form-check mt-1">
-                                <input class="form-check-input" type="radio" name="rb6" (click)="calNota(6,ps10[6].vals[val])">
-                                <label class="form-check-label"> {{resp}} </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="p7">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" data-target="#r7" aria-expanded="false" aria-controls="r7">
-        8.-&nbsp;{{ps10[7].preg}}
-      </button>
-                    </h2>
-                </div>
-                <div id="r7" class="collapse" aria-labelledby="p7" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div *ngFor="let resp of ps10[7].resps; let val=index;">
-                            <div class="form-check mt-1">
-                                <input class="form-check-input" type="radio" name="rb7" (click)="calNota(7,ps10[7].vals[val])">
-                                <label class="form-check-label"> {{resp}} </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="p8">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" data-target="#r8" aria-expanded="false" aria-controls="r8">
-        9.-&nbsp;{{ps10[8].preg}}
-      </button>
-                    </h2>
-                </div>
-                <div id="r8" class="collapse" aria-labelledby="p8" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div *ngFor="let resp of ps10[8].resps; let val=index;">
-                            <div class="form-check mt-1">
-                                <input class="form-check-input" type="radio" name="rb8" (click)="calNota(8,ps10[8].vals[val])">
-                                <label class="form-check-label"> {{resp}} </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="p9">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left text-danger" type="button" data-toggle="collapse" data-target="#r9" aria-expanded="false" aria-controls="r9">
-      10.-&nbsp;{{ps10[9].preg}}
-    </button>
-                    </h2>
-                </div>
-                <div id="r9" class="collapse" aria-labelledby="p9" data-parent="#accordionExample">
-                    <div class="card-body">
-                        <div *ngFor="let resp of ps10[9].resps; let val=index;">
-                            <div class="form-check mt-1">
-                                <input class="form-check-input" type="radio" name="rb9" (click)="calNota(9,ps10[9].vals[val])">
-                                <label class="form-check-label"> {{resp}} </label>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!---->
             <div class="card">
                 <div class="card-header text-center">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" *ngIf='tienename == ""'>Enviar</button>

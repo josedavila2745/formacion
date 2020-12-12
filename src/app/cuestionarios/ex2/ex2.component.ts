@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from './../../services/firestore.service';
-import { FirebaseUIModule } from 'firebaseui-angular';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { Afiliado } from 'src/app/models/afiliado.model';
+import { Tema, Preg } from 'src/app/models/tema.model';
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-ex2',
@@ -11,6 +12,10 @@ import { Afiliado } from 'src/app/models/afiliado.model';
   styleUrls: ['./ex2.component.scss']
 })
 export class Ex2Component implements OnInit {
+  rr="#r0"
+  test: Observable<Tema>
+  cuest: Preg[]
+/*
   cuest=[
     {
       "preg": "Debes activarte para obtener beneficios",
@@ -196,6 +201,8 @@ export class Ex2Component implements OnInit {
       ]
     }
   ];
+*/
+
   nota=0;
   notap=0;
   vnotas=[0,0,0,0,0,0,0,0,0,0];
@@ -225,12 +232,13 @@ export class Ex2Component implements OnInit {
         vt= dd1;
     }
     this.vr=vt;
-    this.vr.map(v => this.ps10.push(this.cuest[v]));
+    this.getCuest();
     //console.log(JSON.stringify(this.ps10));
     //console.log(this.getAfiliados());
     //this.saveAfiliado({nombres:"Angel",apellidos:"Breña",email:"perumundo@gmail.com",movil:"555555",nota1:0,nota2:0,nota3:0,nota4:0})
     this.traerAfiliados();
     if(this.Current.nombres != "" ){this.tienename=this.Current.nombres; this.nota=this.Current.nota2};
+    this.vr.map(v => this.ps10.push(this.cuest[v]));
 
   }
 
@@ -279,6 +287,11 @@ export class Ex2Component implements OnInit {
       this.vnotas[i]=v;
       this.notap=this.vnotas.reduce((a, b) => a + b, 0);
       //console.log(this.nota);
+  }
+  getCuest(){
+    this.test = this.afiliadosService.getTema('planes')
+    //this.cuest= cuc.cuest;
+    this.cuest=this.test['cuest']
   }
   /*
   getAfiliados(){

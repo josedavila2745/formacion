@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Afiliado } from './../models/afiliado.model';
+import { Tema, Preg } from './../models/tema.model';
 
 
 @Injectable({
@@ -11,19 +12,30 @@ import { Afiliado } from './../models/afiliado.model';
 export class FirestoreService {
 
   private dbPath = '/afiliados';
+  private dbPathT = '/temas';
   item$: Observable<any[]>;
   tem2:any;
+  projimo:any;
+  empresa:any;
+  liderazgo:any;
+  planes:any;
   afiliadosRef: AngularFirestoreCollection<Afiliado> = null;
+  temasRef: AngularFirestoreCollection<Tema> = null;
 
   myArray: any[] = []
 
   constructor(private db: AngularFirestore) {
     this.afiliadosRef = db.collection(this.dbPath);
+    //this.temasRef=db.collection(this.dbPathT);
     //this.item$=db.collection<Afiliado>(this.dbPath).doc('creadoid').get();
     this.item$=db.collection(this.dbPath).valueChanges();
     /*this.db.collection("afiliados").get().subscribe((ss) => {
       ss.docs.forEach((doc) => {this.myArray.push(doc.data());});
   });*/
+  this.db.collection(this.dbPathT).doc('empresa').get().subscribe(e => {this.empresa=e.data()})
+  this.db.collection(this.dbPathT).doc('planes').get().subscribe(e => {this.planes=e.data()})
+  this.db.collection(this.dbPathT).doc('liderazgo').get().subscribe(e => {this.liderazgo=e.data()})
+  this.db.collection(this.dbPathT).doc('projimo').get().subscribe(e => {this.projimo=e.data()})
   }
 
   getAll(): AngularFirestoreCollection<Afiliado> {
@@ -37,6 +49,16 @@ export class FirestoreService {
 
   getAll2() {
     return this.myArray;
+  }
+
+  getTema(t:string): any{
+    switch(t){
+      case 'empresa': return this.empresa; break;
+      case 'planes': return this.planes; break;
+      case 'liderazgo': return this.liderazgo; break;
+      case 'projimo': return this.projimo; break;
+      default: return this.empresa; break;
+    }
   }
 
   addA(){
