@@ -1,27 +1,41 @@
 {
-  "rulesFile": "database.rules.json",
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
-  "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "rulesFile": "database.rules.json",
+    "firestore": {
+        "rules": "firestore.rules",
+        "indexes": "firestore.indexes.json"
+    },
+    "hosting": [{
+            "target": "public",
+            "public": "public",
+            "ignore": [
+                "firebase.json",
+                "**/.*",
+                "**/node_modules/**"
+            ],
+            "rewrites": [{
+                "source": "**",
+                "destination": "/index.html"
+            }]
+        },
+        {
+            "target": "editor",
+            "public": "editor",
+            "ignore": [
+                "firebase.json",
+                "**/.*",
+                "**/node_modules/**"
+            ],
+            "rewrites": [{
+                "source": "**",
+                "destination": "/index.html"
+            }]
+
+        }
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  },
-  "storage": {
-    "rules": "storage.rules"
-  },
-  "remoteconfig": {
-    "template": "remoteconfig.template.json"
-  }
+    "storage": {
+        "rules": "storage.rules"
+    },
+    "remoteconfig": {
+        "template": "remoteconfig.template.json"
+    }
 }

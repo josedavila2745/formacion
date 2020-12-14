@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "mlmangelbrena"
+  },
+  "targets": {
+    "mlmangelbrena": {
+      "hosting": {
+        "public": [
+          "mlmangelbrena"
+        ],
+        "editor": [
+          "etestmlmab"
+        ]
+      }
+    }
   }
 }
